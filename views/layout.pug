@@ -20,15 +20,17 @@ html(lang="ko")
             a(href='/') Home
           li
             a(href='/list') List
+          li
+            a(href='/genre') Genre
           if !name
             li
               a(href='/auth/register') Register
             li
               a(href='/auth/login') Login
+
           else
             li #{name}
-            li
-              a(href='/auth/logout') Logout
+            li a(href='/auth/logout') Logout
       ul.player
         li
           a.play.icon-play-circled2(href='#paly')
@@ -36,4 +38,4 @@ html(lang="ko")
         li
           a.pause.icon-pause(href='#stop')
             span Pause
-    script(src='/page.js')
+    //script(src='/page.js')

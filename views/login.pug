@@ -1,10 +1,11 @@
 extends layout
 block content
-  div(class='content')
-    form(action='/auth/login' method='post')
-      p
-        input(type='text' placeholder='username' name='username')
-      p
-        input(type='password' placeholder='Password' name='password')
-      p
-        input(type='submit')
+  .content
+    div(id='login')
+      form(action='/auth/login' method='post')
+        p
+          input(type='text' placeholder='username' name='username')
+        p
+          input(type='password' placeholder='Password' name='password')
+        p
+          input(type='submit')

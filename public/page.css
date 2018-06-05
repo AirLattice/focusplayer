@@ -16,7 +16,7 @@ article{
     max-width:100%;
     //position: fixed;
     //top:15%;
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     width:100%;
     //transform: translateY(-50%);
     font-size: 1rem;
@@ -24,17 +24,34 @@ article{
     font-weight: 200;
 }
 article .section1{
-    background-color: rgba(15, 30, 15, 0.7);
-    height: 30vh;
+    background-color: rgba(245, 245, 245, 0.7);
+    height: 85vh;
+    text-align: center;
 }
 article .section2{
-  background-color: rgba(15, 15, 15, 0.7);
-  height: 50vh;
+  background-color: rgba(245, 245, 245, 0.7);
+  height: 85vh;
+  text-align: center;
 }
 article .section3{
-  background-color: rgba(15, 15, 30, 0.7);
-  height: 35vh;
+  background-color: rgba(245, 245, 245, 0.7);
+  height: 85vh;
+  text-align: center;
 }
+article #register{
+  background-color: rgba(245, 245, 245, 0.7);
+  height: 100vh;
+  text-align: center;
+}
+article #login{
+  background-color: rgba(245, 245, 245, 0.7);
+  height: 100vh;
+  text-align: center;
+}
+article #list{
+  background-color: rgba(245, 245, 245, 0.7);
+  height: 100vh;
+  text-align: center;
 .control{
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -42,6 +59,7 @@ article .section3{
     top: 0;
     width: 100%;
     padding:0rem 1rem;
+    text-align: center;
 }
 .control ul{
     list-style: none;

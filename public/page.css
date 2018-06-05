@@ -30,6 +30,7 @@ article .section1{
     text-align: center;
     background-image: url('rory-hennessey.jpg');
     background-size:cover;
+    background-position: center;
 }
 article .section2{
     //background-color: rgba(245, 245, 245, 0.7);

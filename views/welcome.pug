@@ -1,2 +1,15 @@
 extends layout
 block content
+  .content
+    if name
+      h1 hello #{name}
+    else
+      h1 not included
+    p
+      if name
+        a(href='/auth/logout') Logout
+      else
+        a(href='/auth/login') Login
+    p
+      a(href='/') Home
+

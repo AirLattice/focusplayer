@@ -7,7 +7,7 @@ $(document).ready(function(){
     $(window).on('popstate', function(event){
         $('article').load(location.href+' article>.content');
     })
-    var audio = new Audio('unnamed0003.mp3');
+    var audio = new Audio('http://restapi.fs.ncloud.com/focusfs/iu.mp3');
     $(document).on('click', '.control .player .play', function(event){
         audio.play();
     });

@@ -3,13 +3,12 @@
     box-sizing: border-box;
 }
 body{
-    background-image:url(https://source.unsplash.com/category/nature/1600x900);
-    background-size:cover;
+//    background-image:url(https://source.unsplash.com/category/nature/1600x900);
+//    background-size:cover;
     min-height:100vh;
     margin:0;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 200;
-
 }
 article{
     background-color: white;
@@ -17,10 +16,20 @@ article{
     max-width:20rem;
     position: fixed;
     top:50%;
+    width:100%;
     transform: translateY(-50%);
     font-size: 1rem;
-    padding:0.5rem;
+    padding:1.2rem;
     font-weight: 200;
+}
+article .section1{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+article .section2{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+article .section3{
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .control{
     background-color: rgba(0, 0, 0, 0.7);

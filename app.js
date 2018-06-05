@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var OrientoStore = require('connect-oriento')(session);
+var pug = require('pug');
 // var bkfd2Password = require("pbkdf2-password");
 // var hasher = bkfd2Password();
 // var passport = require('passport');
@@ -45,12 +46,25 @@ var user = {
 };
 var db = require('./config/orientdb')(app);
 
-
-
-
+/*
+function check(req, res, session){
+  if(req.session.displayName){
+    res.send(req.session.displayName);
+    var dispname = req.session.displayName;
+    return dispname;
+  } 
+};
+*/
 
 //////////////////////////////////////////////////////////////////////
 // ROUTERS
+app.get('/check', function(req, res){
+  if(req.session.displayName){
+    res.send(req.session.displayName);
+  } else {
+    res.send('You are not have session');
+  }
+});
 app.get('/auth/logout', function(req, res){
   delete req.session.displayName;
   res.redirect('/');
@@ -100,22 +114,11 @@ app.get('/auth/logout', function(req, res){
   res.redirect('/');
 });
 app.get('/welcome', function(req, res){
- if(req.session.displayName){
-    res.send(`
-      <h1>Welcome : ${req.session.displayName}</h1>
-       <a href='/auth/logout'>Logout</a>
-     `);
-   } else{
-     res.send(`
-       <h1>Welcome</h1>
-       <ul>
-         <li><a href='/auth/login'>Login</a></li>
-         <li><a href='/auth/register'>Register</a></li>
-       </ul>
-     `);
-   }
+  if(req.session.displayName){
+     var dispname = req.session.displayName;
+     res.render('welcome', { dpname: dispname});
+  }
 });
-
 app.post('/auth/login', function(req, res){
   var uname = req.body.username;
   var pwd = req.body.password;
@@ -130,7 +133,7 @@ app.post('/auth/login', function(req, res){
         });
       }
     }
-    res.send('<h1>Who are you?</h1><a href="/auth/login">login</a>');
+    res.redirect('/welcome');
   });
 });
 app.get('/auth/login', function(req, res){
@@ -152,8 +155,8 @@ app.get('/page2', function(req, res){
   res.render('page2')
 })
 app.get('/', function(req, res){
-  res.render('main')
-})
+  res.render('main');
+});
 
 
 

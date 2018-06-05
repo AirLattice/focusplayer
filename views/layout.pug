@@ -8,22 +8,27 @@ html(lang="ko")
     script(src='https://code.jquery.com/jquery-2.2.4.min.js', integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
     link(rel='stylesheet', href='/page.css')
     link(rel='stylesheet', href='/fontello/css/fontello.css')
+    //link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
   body
+    - var name = dpname
     article
       block content
     .control
       nav
         ul
           li
-            a(href='/page1') Page1
-          li
-            a(href='/page2') Page2
+            a(href='/') Home 
           li
             a(href='/list') List
-          li
-            a(href='/auth/register') Register
-          li
-            a(href='/auth/login') Login
+          if !name
+            li
+              a(href='/auth/register') Register
+            li
+              a(href='/auth/login') Login
+          else
+            li #{name}
+            li 
+              a(href='/auth/logout') Logout
       ul.player
         li
           a.play.icon-play-circled2(href='#paly')

@@ -4,7 +4,8 @@ RUN cd /etc/apt && \
     sed -i 's/archive.ubuntu.com/ftp.daum.net/g' sources.list
 
 RUN apt-get update
-RUN apt-get install -y nodejs npm
+RUN apt-get install -y nodejs
+RUN apt-get install -y npm
 
 ADD app.js /var/www/app.js
 ADD package.json /var/www/package.json

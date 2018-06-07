@@ -22,15 +22,14 @@ html(lang="ko")
             a(href='/list') List
           li
             a(href='/genre') Genre
-          if !name
-            li
-              a(href='/auth/register') Register
-            li
-              a(href='/auth/login') Login
-
-          else
-            li #{name}
-            li a(href='/auth/logout') Logout
+//          if !name
+//            li
+//              a(href='/auth/register') Register
+//            li
+//              a(href='/auth/login') Login
+//          else
+//            li #{name}
+//            li a(href='/auth/logout') Logout
       ol.player
         li
           a.play.icon-play-circled2(href='#paly')

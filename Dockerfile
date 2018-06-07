@@ -12,6 +12,7 @@ ADD app.js /var/www/app.js
 ADD package.json /var/www/package.json
 
 WORKDIR /var/www
+RUN npm init -y
 RUN npm install
  
 CMD nodejs app.js
